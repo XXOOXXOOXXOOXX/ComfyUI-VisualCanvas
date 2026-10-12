@@ -1,0 +1,15 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>Visual Canvas UI test harness</title>
+<style>body{background:#13171e;margin:30px;display:flex;justify-content:center;font-family:system-ui;color:#e1e6ed}.node{width:600px;border-radius:14px;border:2px solid #586c87;background:#292e37;padding:10px}.title{padding:4px 8px 12px;font-size:18px}.ports{display:flex;justify-content:space-between;font-size:13px;color:#aebcce;padding:0 8px 12px}.note{font-size:12px;color:#9aa9bd;padding:8px}</style>
+</head><body><div class="node"><div class="title">可视化扩图画布 · Visual Canvas</div><div class="ports"><span>● image</span><span>image ●　mask ●</span></div><div id="mount"></div><div class="note">独立界面测试 · 原图来自 Load Image 的 IMAGE 连接</div></div>
+<script type="module">
+import { app } from "/scripts/app.js";
+await import("/web/visual_canvas.js");
+class MockNode {
+    constructor(){this.id=2;this.type="VisualCanvasExpand";this.size=[200,100];this.inputs=[{name:"image",link:1}];this.widgets=[{name:"canvas_state",value:'{"version":1,"locked":null}'}];this.graph=app.graph;}
+    addDOMWidget(name,type,element,options){document.getElementById("mount").append(element);const widget={name,type,options,element};this.widgets.push(widget);return widget;}
+    setSize(size){this.size=size;}
+    setDirtyCanvas(){}
+}
+await app.extension.beforeRegisterNodeDef(MockNode,{name:"VisualCanvasExpand"});
+window.node = new MockNode();window.node.onNodeCreated();window.app=app;
+</script></body></html>

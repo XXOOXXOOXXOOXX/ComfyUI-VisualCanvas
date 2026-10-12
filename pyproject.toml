@@ -1,0 +1,9 @@
+[project]
+name = "comfyui-visual-canvas"
+version = "1.0.0"
+description = "Interactive image outpainting canvas with persistent confirmation locking"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+[tool.comfy]
+DisplayName = "Visual Canvas — 可视化扩图画布"

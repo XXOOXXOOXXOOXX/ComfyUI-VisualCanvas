@@ -1,0 +1,45 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "visual-canvas-sample.png"
+    }
+  },
+  "2": {
+    "class_type": "VisualCanvasExpand",
+    "inputs": {
+      "image": [
+        "1",
+        0
+      ],
+      "canvas_state": "{\"version\": 1, \"locked\": {\"sourceWidth\": 400, \"sourceHeight\": 300, \"rect\": {\"x\": -100, \"y\": -75, \"width\": 600, \"height\": 450}, \"color\": \"#ffffff\", \"preset\": \"4:3\"}, \"status\": \"confirmed\", \"draft\": {\"sourceWidth\": 400, \"sourceHeight\": 300, \"rect\": {\"x\": -100, \"y\": -75, \"width\": 600, \"height\": 450}, \"color\": \"#ffffff\", \"preset\": \"4:3\"}}"
+    }
+  },
+  "3": {
+    "class_type": "PreviewImage",
+    "inputs": {
+      "images": [
+        "2",
+        0
+      ]
+    }
+  },
+  "4": {
+    "class_type": "MaskToImage",
+    "inputs": {
+      "mask": [
+        "2",
+        1
+      ]
+    }
+  },
+  "5": {
+    "class_type": "PreviewImage",
+    "inputs": {
+      "images": [
+        "4",
+        0
+      ]
+    }
+  }
+}
