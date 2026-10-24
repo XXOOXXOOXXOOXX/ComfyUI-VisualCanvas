@@ -1,6 +1,6 @@
 # 可视化扩图画布 · Visual Canvas
 
-一个独立的 ComfyUI 扩图节点。图片从 ComfyUI 自带的 **加载图片 / Load Image** 节点输入；拖动白色画布框扩展图片，确认后锁定。
+一个独立的 ComfyUI 扩图节点。图片从 ComfyUI 自带的 **加载图片 / Load Image** 节点输入；拖动白色画布框扩展图片，确认后锁定。不会修改或依赖 YCNodes 等其他插件。
 
 ![界面示例](examples/interface-preview.png)
 
